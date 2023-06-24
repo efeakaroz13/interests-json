@@ -1,2 +1,2 @@
 # interests-json
-Interests files for loading in apps
+This repository is for interest selection on social platforms, apps and your projects. 
