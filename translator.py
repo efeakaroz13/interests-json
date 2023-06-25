@@ -27,7 +27,7 @@ for l in languages:
             except:
                 continue
                 
-        output[keyTranslated] = []
+        output[keyTranslated.text] = []
         for c in currentArray:
             try:
                 cTranslated = translator.translate(c, dest=l)
@@ -37,8 +37,9 @@ for l in languages:
                     cTranslated = translator.translate(c, dest=l)
                 except:
                     continue
-            output[keyTranslated].append(cTranslated)
-    print(Fore.SCC,f"{l} successfully completed!",Fore.RESET)
+            print(cTranslated.text)
+            output[keyTranslated.text].append(cTranslated.text)
+    print(Fore.GREEN,f"{l} successfully completed!",Fore.RESET)
     print("Continuing")
     open("data/interests.{}.json".format(l),"w").write(json.dumps(output,indent=4,ensure_ascii=False))
 
